@@ -60,6 +60,19 @@ defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+defaults write com.knollsoft.Rectangle alternateDefaultShortcuts -bool true
+defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 1
+defaults write com.knollsoft.Rectangle launchOnLogin -bool true
+defaults write com.knollsoft.Rectangle SUEnableAutomaticChecks -bool true
+defaults write com.knollsoft.Rectangle leftHalf -dict keyCode -int 38 modifierFlags -int 1179648
+defaults write com.knollsoft.Rectangle rightHalf -dict keyCode -int 40 modifierFlags -int 1179648
+defaults write com.knollsoft.Rectangle topHalf -dict keyCode -int 34 modifierFlags -int 1179648
+defaults write com.knollsoft.Rectangle bottomHalf -dict keyCode -int 46 modifierFlags -int 1179648
+defaults write com.knollsoft.Rectangle previousDisplay -dict keyCode -int 4 modifierFlags -int 1179648
+defaults write com.knollsoft.Rectangle nextDisplay -dict keyCode -int 37 modifierFlags -int 1179648
+killall Rectangle 2>/dev/null || true
+open -ga Rectangle 2>/dev/null || true
+
 killall Finder 2>/dev/null || true
 killall Dock 2>/dev/null || true
 

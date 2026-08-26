@@ -61,6 +61,22 @@ for key in \
   delete_key com.apple.dock "$key"
 done
 
+for key in \
+  alternateDefaultShortcuts \
+  subsequentExecutionMode \
+  launchOnLogin \
+  SUEnableAutomaticChecks \
+  leftHalf \
+  rightHalf \
+  topHalf \
+  bottomHalf \
+  previousDisplay \
+  nextDisplay; do
+  delete_key com.knollsoft.Rectangle "$key"
+done
+killall Rectangle 2>/dev/null || true
+open -ga Rectangle 2>/dev/null || true
+
 for key in OpenMainWindow ShowCategory SortColumn SortDirection; do
   delete_key com.apple.ActivityMonitor "$key"
 done
